@@ -1,0 +1,19 @@
+micronaut:
+  security:
+    token:
+      jwt:
+        signatures:
+          secret:
+            generator:
+              secret: ${JWT_GENERATOR_SIGNATURE_SECRET:pleaseChangeThisSecretForANewOne}
+    authentication: cookie
+  application:
+    name: starter
+
+mongodb:
+  host: "mongodb://localhost:27017"
+  database: starter
+datasources:
+  default:
+    db-type: postgres
+    driver-class-name: org.postgresql.Driver

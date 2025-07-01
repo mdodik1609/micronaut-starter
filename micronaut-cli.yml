@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: hr.mdodik
+testFramework: junit
+sourceLanguage: kotlin
+buildTool: gradle_kotlin
+features: [app-name, data, data-mongodb, gradle, http-client, http-client-test, jackson-databind, jdbc-hikari, junit, kotlin, kotlin-application, ksp, logback, micronaut-aot, micronaut-build, micronaut-http-validation, netty-server, postgres, properties, readme, security-annotations, security-jwt, security-oauth2, serialization-jackson, shade, static-resources, test-resources]
