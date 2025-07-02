@@ -10,10 +10,30 @@ micronaut:
   application:
     name: starter
 
+app:
+  database:
+    type: ${DATABASE_TYPE:mongo} # Options: mongo, postgres, postgresql
+
 mongodb:
   host: "mongodb://localhost:27017"
   database: starter
+
 datasources:
   default:
     db-type: postgres
     driver-class-name: org.postgresql.Driver
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/starter}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:password}
+    dialect: POSTGRES
+
+jpa:
+  default:
+    entity-scan-packages: "hr.mdodik.model"
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: ${HIBERNATE_DDL_AUTO:validate}
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: ${HIBERNATE_SHOW_SQL:false}
+        format_sql: ${HIBERNATE_FORMAT_SQL:false}
